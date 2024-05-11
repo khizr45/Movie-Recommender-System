@@ -59,20 +59,3 @@ with open('TF-IDF-VECTORS.pickle', 'wb') as f:
 
 with open('MOVIES-TITLE.pickle', 'wb') as f:
     pickle.dump(data['Series_Title'], f)
-
-
-
-
-
-
-
-
-
-
-
-
-
-# 'Poster_Link', 'Series_Title', 'Released_Year', 'Certificate',
-#        'Runtime', 'Genre', 'IMDB_Rating', 'Overview', 'Meta_score', 'Director',
-#        'Star1', 'Star2', 'Star3', 'Star4', 'No_of_Votes', 'Gross'],
-#       dtype='object'
