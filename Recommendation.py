@@ -22,6 +22,8 @@ def RecommendMovies():
         return jsonify([])
     recommended_movies = []
     recommended_cosine = []
+    tempWatched = watchedMovies
+
     for movie in watchedMovies:
         index = movies.index(movie)
         tempMovies = movies
@@ -32,21 +34,23 @@ def RecommendMovies():
         tempMovies = [tempMovies[i] for i in sorted_indices]
 
         count = 1
-
         while count != 5:
             if tempMovies[count] not in recommended_movies:
                 recommended_movies.append(tempMovies[count])
                 recommended_cosine.append(cos_movie[count])
                 count += 1
 
-
-
-
     sorted_indices = sorted(range(len(recommended_cosine)), key=lambda i: recommended_cosine[i],reverse=True)
     recommended_cosine = [recommended_cosine[i] for i in sorted_indices]
     recommended_movies = [recommended_movies[i] for i in sorted_indices]
-    return jsonify({"recommended movies": recommended_movies[0:10]})
-    # print(recommended_movies[0:5])
+
+    returnRecommended = []
+    for i in range(len(recommended_movies)):
+        if recommended_movies[i] not in watchedMovies:
+            returnRecommended.append(recommended_movies[i])
+
+
+    return jsonify({"recommended movies": returnRecommended})
 
 
 if __name__ == '__main__':

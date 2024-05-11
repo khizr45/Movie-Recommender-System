@@ -10,5 +10,5 @@ async function getRecommendedMovies(watchedMovies){
     console.log(data)
 }
 
-Nasir_watched = ['The Dark Knight','Inception','Star Wars: Episode V - The Empire Strikes Back']
+let Nasir_watched = ['The Dark Knight','Inception','Star Wars: Episode V - The Empire Strikes Back','À bout de souffle']
 getRecommendedMovies(Nasir_watched)
