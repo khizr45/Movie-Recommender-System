@@ -34,7 +34,7 @@ def RecommendMovies():
         tempMovies = [tempMovies[i] for i in sorted_indices]
 
         count = 1
-        while count != 5:
+        while count != 3:
             if tempMovies[count] not in recommended_movies:
                 recommended_movies.append(tempMovies[count])
                 recommended_cosine.append(cos_movie[count])
@@ -50,7 +50,7 @@ def RecommendMovies():
             returnRecommended.append(recommended_movies[i])
 
 
-    return jsonify({"recommended movies": returnRecommended})
+    return jsonify( returnRecommended)
 
 
 if __name__ == '__main__':
